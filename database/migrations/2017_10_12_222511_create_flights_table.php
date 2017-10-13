@@ -16,8 +16,14 @@ class CreateFlightsTable extends Migration
         Schema::create('flights', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string("departure");
-            $table->string("arrival");
+
+            // Add new columns for foreign key constraints
+            $table->integer("arrival_airport_id")->unsigned()->notNull()->default(0);
+            $table->integer("departure_airport_id")->unsigned()->notNull()->default(0);
+
+            // Make the foreign keys
+            $table->foreign("arrival_airport_id")->references("id")->on("airports");
+            $table->foreign("departure_airport_id")->references("id")->on("airports");
         });
     }
 
