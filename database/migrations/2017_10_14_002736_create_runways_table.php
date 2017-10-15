@@ -18,10 +18,10 @@ class CreateRunwaysTable extends Migration
             $table->timestamps();
 
             $table->string("name", 3); // "09R", "18"
-            $table->integer("length"); // In metres
+            $table->integer("length"); // In feet
             $table->integer("elevation"); // In feet
             $table->float("slope"); // In percent
-            $table->integer("width"); // In metres
+            $table->integer("width"); // In feet
             $table->enum("type", ["asphalt", "grass"])->default("asphalt"); //
 
             $table->integer("airport_id")->unsigned();

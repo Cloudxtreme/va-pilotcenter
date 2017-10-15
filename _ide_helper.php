@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.5.14 on 2017-10-12.
+ * Generated for Laravel 5.5.14 on 2017-10-15.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -427,14 +427,14 @@ namespace Illuminate\Support\Facades {
         
         /**
          * Resolve the given type from the container.
-         *
+         * 
          * (Overriding Container::make)
          *
          * @param string $abstract
          * @param array $parameters
          * @return mixed 
-         * @static 
-         */
+         * @static
+         */ 
         public static function make($abstract, $parameters = array())
         {
             return \Illuminate\Foundation\Application::make($abstract, $parameters);
@@ -537,7 +537,7 @@ namespace Illuminate\Support\Facades {
          *
          * @return string
          * @static
-         */
+         */ 
         public static function getCachedPackagesPath()
         {
             return \Illuminate\Foundation\Application::getCachedPackagesPath();
@@ -824,16 +824,16 @@ namespace Illuminate\Support\Facades {
 
         /**
          * Returns true if the container can return an entry for the given identifier.
-         *
+         * 
          * Returns false otherwise.
-         *
+         * 
          * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
          * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
          *
          * @param string $id Identifier of the entry to look for.
          * @return bool
          * @static
-         */
+         */ 
         public static function has($id)
         {
             //Method inherited from \Illuminate\Container\Container            
@@ -1127,7 +1127,7 @@ namespace Illuminate\Support\Facades {
          * @param array $parameters
          * @return mixed
          * @static
-         */
+         */ 
         public static function makeWith($abstract, $parameters = array())
         {
             //Method inherited from \Illuminate\Container\Container            
@@ -1142,7 +1142,7 @@ namespace Illuminate\Support\Facades {
          * @throws ContainerExceptionInterface Error while retrieving the entry.
          * @return mixed Entry.
          * @static
-         */
+         */ 
         public static function get($id)
         {
             //Method inherited from \Illuminate\Container\Container            
@@ -1615,8 +1615,8 @@ namespace Illuminate\Support\Facades {
          * @param string|null $provider
          * @return \Illuminate\Contracts\Auth\UserProvider|null 
          * @throws \InvalidArgumentException
-         * @static 
-         */
+         * @static
+         */ 
         public static function createUserProvider($provider = null)
         {
             return \Illuminate\Auth\AuthManager::createUserProvider($provider);
@@ -1627,7 +1627,7 @@ namespace Illuminate\Support\Facades {
          *
          * @return string
          * @static
-         */
+         */ 
         public static function getDefaultUserProvider()
         {
             return \Illuminate\Auth\AuthManager::getDefaultUserProvider();
@@ -1930,10 +1930,10 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if the current user is authenticated.
          *
-         * @return \App\User
+         * @return \App\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static
-         */
+         */ 
         public static function authenticate()
         {
             return \Illuminate\Auth\SessionGuard::authenticate();
@@ -1965,8 +1965,8 @@ namespace Illuminate\Support\Facades {
          * Get the user provider used by the guard.
          *
          * @return \Illuminate\Contracts\Auth\UserProvider 
-         * @static 
-         */
+         * @static
+         */ 
         public static function getProvider()
         {
             return \Illuminate\Auth\SessionGuard::getProvider();
@@ -1978,7 +1978,7 @@ namespace Illuminate\Support\Facades {
          * @param \Illuminate\Contracts\Auth\UserProvider $provider
          * @return void
          * @static
-         */
+         */ 
         public static function setProvider($provider)
         {
             \Illuminate\Auth\SessionGuard::setProvider($provider);
@@ -2003,7 +2003,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Auth\SessionGuard::mixin($mixin);
@@ -2114,7 +2114,7 @@ namespace Illuminate\Support\Facades {
          * @param callable $callback
          * @return void
          * @static
-         */
+         */ 
         public static function if($name, $callback)
         {
             \Illuminate\View\Compilers\BladeCompiler::if ($name, $callback);
@@ -2127,7 +2127,7 @@ namespace Illuminate\Support\Facades {
          * @param array $parameters
          * @return bool
          * @static
-         */
+         */ 
         public static function check($name, $parameters = null)
         {
             return \Illuminate\View\Compilers\BladeCompiler::check($name, $parameters);
@@ -2534,7 +2534,7 @@ namespace Illuminate\Support\Facades {
          *   MUST be thrown if $keys is neither an array nor a Traversable,
          *   or if any of the $keys are not a legal value.
          * @static
-         */
+         */ 
         public static function getMultiple($keys, $default = null)
         {
             return \Illuminate\Cache\Repository::getMultiple($keys, $default);
@@ -2579,7 +2579,7 @@ namespace Illuminate\Support\Facades {
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if the $key string is not a legal value.
          * @static
-         */
+         */ 
         public static function set($key, $value, $ttl = null)
         {
             return \Illuminate\Cache\Repository::set($key, $value, $ttl);
@@ -2610,7 +2610,7 @@ namespace Illuminate\Support\Facades {
          *   MUST be thrown if $values is neither an array nor a Traversable,
          *   or if any of the $values are not a legal value.
          * @static
-         */
+         */ 
         public static function setMultiple($values, $ttl = null)
         {
             return \Illuminate\Cache\Repository::setMultiple($values, $ttl);
@@ -2729,7 +2729,7 @@ namespace Illuminate\Support\Facades {
          * @throws \Psr\SimpleCache\InvalidArgumentException
          *   MUST be thrown if the $key string is not a legal value.
          * @static
-         */
+         */ 
         public static function delete($key)
         {
             return \Illuminate\Cache\Repository::delete($key);
@@ -2744,7 +2744,7 @@ namespace Illuminate\Support\Facades {
          *   MUST be thrown if $keys is neither an array nor a Traversable,
          *   or if any of the $keys are not a legal value.
          * @static
-         */
+         */ 
         public static function deleteMultiple($keys)
         {
             return \Illuminate\Cache\Repository::deleteMultiple($keys);
@@ -2755,7 +2755,7 @@ namespace Illuminate\Support\Facades {
          *
          * @return bool True on success and false on failure.
          * @static
-         */
+         */ 
         public static function clear()
         {
             return \Illuminate\Cache\Repository::clear();
@@ -2888,7 +2888,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Cache\Repository::mixin($mixin);
@@ -2999,7 +2999,7 @@ namespace Illuminate\Support\Facades {
          * @param array $keys
          * @return array
          * @static
-         */
+         */ 
         public static function getMany($keys)
         {
             return \Illuminate\Config\Repository::getMany($keys);
@@ -3121,8 +3121,8 @@ namespace Illuminate\Support\Facades {
          * @param bool $raw
          * @param string|null $sameSite
          * @return \Symfony\Component\HttpFoundation\Cookie 
-         * @static 
-         */
+         * @static
+         */ 
         public static function make($name, $value, $minutes = 0, $path = null, $domain = null, $secure = false, $httpOnly = true, $raw = false, $sameSite = null)
         {
             return \Illuminate\Cookie\CookieJar::make($name, $value, $minutes, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
@@ -3140,8 +3140,8 @@ namespace Illuminate\Support\Facades {
          * @param bool $raw
          * @param string|null $sameSite
          * @return \Symfony\Component\HttpFoundation\Cookie 
-         * @static 
-         */
+         * @static
+         */ 
         public static function forever($name, $value, $path = null, $domain = null, $secure = false, $httpOnly = true, $raw = false, $sameSite = null)
         {
             return \Illuminate\Cookie\CookieJar::forever($name, $value, $path, $domain, $secure, $httpOnly, $raw, $sameSite);
@@ -3218,8 +3218,8 @@ namespace Illuminate\Support\Facades {
          * @param bool $secure
          * @param string $sameSite
          * @return $this 
-         * @static 
-         */
+         * @static
+         */ 
         public static function setDefaultPathAndDomain($path, $domain, $secure = false, $sameSite = null)
         {
             return \Illuminate\Cookie\CookieJar::setDefaultPathAndDomain($path, $domain, $secure, $sameSite);
@@ -3259,7 +3259,7 @@ namespace Illuminate\Support\Facades {
          * @param string $cipher
          * @return string
          * @static
-         */
+         */ 
         public static function generateKey($cipher)
         {
             return \Illuminate\Encryption\Encrypter::generateKey($cipher);
@@ -3683,7 +3683,7 @@ namespace Illuminate\Support\Facades {
          * @param array $bindings
          * @return void
          * @static
-         */
+         */ 
         public static function bindValues($statement, $bindings)
         {
             //Method inherited from \Illuminate\Database\Connection            
@@ -3750,7 +3750,7 @@ namespace Illuminate\Support\Facades {
          * @param bool $value
          * @return void
          * @static
-         */
+         */ 
         public static function recordsHaveBeenModified($value = true)
         {
             //Method inherited from \Illuminate\Database\Connection            
@@ -4760,8 +4760,8 @@ namespace Illuminate\Support\Facades {
          * @param string $directory
          * @param bool $hidden
          * @return array 
-         * @static 
-         */
+         * @static
+         */ 
         public static function files($directory, $hidden = false)
         {
             return \Illuminate\Filesystem\Filesystem::files($directory, $hidden);
@@ -4881,7 +4881,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Filesystem\Filesystem::mixin($mixin);
@@ -5012,8 +5012,8 @@ namespace Illuminate\Support\Facades {
          * @param \Illuminate\Auth\Access\iterable|string $abilities
          * @param array|mixed $arguments
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function check($abilities, $arguments = array())
         {
             return \Illuminate\Auth\Access\Gate::check($abilities, $arguments);
@@ -5026,7 +5026,7 @@ namespace Illuminate\Support\Facades {
          * @param array|mixed $arguments
          * @return bool
          * @static
-         */
+         */ 
         public static function any($abilities, $arguments = array())
         {
             return \Illuminate\Auth\Access\Gate::any($abilities, $arguments);
@@ -5098,7 +5098,7 @@ namespace Illuminate\Support\Facades {
          *
          * @return array
          * @static
-         */
+         */ 
         public static function policies()
         {
             return \Illuminate\Auth\Access\Gate::policies();
@@ -5312,7 +5312,7 @@ namespace Illuminate\Support\Facades {
          * @param string $path
          * @return void
          * @static
-         */
+         */ 
         public static function addJsonPath($path)
         {
             \Illuminate\Translation\Translator::addJsonPath($path);
@@ -5454,7 +5454,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Translation\Translator::mixin($mixin);
@@ -5810,7 +5810,7 @@ namespace Illuminate\Support\Facades {
          * @param array $data
          * @return \Illuminate\View\View
          * @static
-         */
+         */ 
         public static function render($view, $data = array())
         {
             return \Illuminate\Mail\Mailer::render($view, $data);
@@ -5823,7 +5823,7 @@ namespace Illuminate\Support\Facades {
          * @param array $data
          * @param \Closure|string $callback
          * @return void
-         * @static
+         * @static 
          */ 
         public static function send($view, $data = array(), $callback = null)
         {
@@ -5836,8 +5836,8 @@ namespace Illuminate\Support\Facades {
          * @param string|array|\Illuminate\Mail\MailableContract $view
          * @param string|null $queue
          * @return mixed 
-         * @static 
-         */
+         * @static
+         */ 
         public static function queue($view, $queue = null)
         {
             return \Illuminate\Mail\Mailer::queue($view, $queue);
@@ -5849,8 +5849,8 @@ namespace Illuminate\Support\Facades {
          * @param string $queue
          * @param string|array $view
          * @return mixed 
-         * @static 
-         */
+         * @static
+         */ 
         public static function onQueue($queue, $view)
         {
             return \Illuminate\Mail\Mailer::onQueue($queue, $view);
@@ -5864,8 +5864,8 @@ namespace Illuminate\Support\Facades {
          * @param string $queue
          * @param string|array $view
          * @return mixed 
-         * @static 
-         */
+         * @static
+         */ 
         public static function queueOn($queue, $view)
         {
             return \Illuminate\Mail\Mailer::queueOn($queue, $view);
@@ -5878,8 +5878,8 @@ namespace Illuminate\Support\Facades {
          * @param string|array|\Illuminate\Mail\MailableContract $view
          * @param string|null $queue
          * @return mixed 
-         * @static 
-         */
+         * @static
+         */ 
         public static function later($delay, $view, $queue = null)
         {
             return \Illuminate\Mail\Mailer::later($delay, $view, $queue);
@@ -5892,8 +5892,8 @@ namespace Illuminate\Support\Facades {
          * @param \DateTimeInterface|\DateInterval|int $delay
          * @param string|array $view
          * @return mixed 
-         * @static 
-         */
+         * @static
+         */ 
         public static function laterOn($queue, $delay, $view)
         {
             return \Illuminate\Mail\Mailer::laterOn($queue, $delay, $view);
@@ -5975,7 +5975,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Mail\Mailer::mixin($mixin);
@@ -6440,7 +6440,7 @@ namespace Illuminate\Support\Facades {
          * @param mixed $job
          * @return mixed
          * @static
-         */
+         */ 
         public static function getJobExpiration($job)
         {
             //Method inherited from \Illuminate\Queue\Queue            
@@ -6787,8 +6787,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $patterns
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function is($patterns = null)
         {
             return \Illuminate\Http\Request::is($patterns);
@@ -6799,8 +6799,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $patterns
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function routeIs($patterns = null)
         {
             return \Illuminate\Http\Request::routeIs($patterns);
@@ -6811,8 +6811,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $patterns
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function fullUrlIs($patterns = null)
         {
             return \Illuminate\Http\Request::fullUrlIs($patterns);
@@ -8382,7 +8382,7 @@ namespace Illuminate\Support\Facades {
          * @param mixed $key
          * @return bool
          * @static
-         */
+         */ 
         public static function hasAny($keys = null)
         {
             return \Illuminate\Http\Request::hasAny($keys);
@@ -8394,7 +8394,7 @@ namespace Illuminate\Support\Facades {
          * @param string|array $key
          * @return bool
          * @static
-         */
+         */ 
         public static function filled($key)
         {
             return \Illuminate\Http\Request::filled($key);
@@ -8405,7 +8405,7 @@ namespace Illuminate\Support\Facades {
          *
          * @return array
          * @static
-         */
+         */ 
         public static function keys()
         {
             return \Illuminate\Http\Request::keys();
@@ -8416,8 +8416,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param array|mixed $keys
          * @return array 
-         * @static 
-         */
+         * @static
+         */ 
         public static function all($keys = null)
         {
             return \Illuminate\Http\Request::all($keys);
@@ -8480,7 +8480,7 @@ namespace Illuminate\Support\Facades {
          * @param string|array|null $default
          * @return string|array
          * @static
-         */
+         */ 
         public static function post($key = null, $default = null)
         {
             return \Illuminate\Http\Request::post($key, $default);
@@ -8566,7 +8566,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Http\Request::mixin($mixin);
@@ -8585,10 +8585,10 @@ namespace Illuminate\Support\Facades {
         }
 
         /**
-         *
+         * 
          *
          * @static
-         */
+         */ 
         public static function validate($rules, $params = null)
         {
             return \Illuminate\Http\Request::validate($rules, $params);
@@ -8794,7 +8794,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Routing\ResponseFactory::mixin($mixin);
@@ -8913,7 +8913,7 @@ namespace Illuminate\Support\Facades {
          * @param \Closure|array|string|null $action
          * @return \Illuminate\Routing\Route
          * @static
-         */
+         */ 
         public static function fallback($action)
         {
             return \Illuminate\Routing\Router::fallback($action);
@@ -8927,7 +8927,7 @@ namespace Illuminate\Support\Facades {
          * @param int $status
          * @return \Illuminate\Routing\Route
          * @static
-         */
+         */ 
         public static function redirect($uri, $destination, $status = 301)
         {
             return \Illuminate\Routing\Router::redirect($uri, $destination, $status);
@@ -8941,7 +8941,7 @@ namespace Illuminate\Support\Facades {
          * @param array $data
          * @return \Illuminate\Routing\Route
          * @static
-         */
+         */ 
         public static function view($uri, $view, $data = array())
         {
             return \Illuminate\Routing\Router::view($uri, $view, $data);
@@ -9043,7 +9043,7 @@ namespace Illuminate\Support\Facades {
          * @param string $name
          * @return mixed
          * @static
-         */
+         */ 
         public static function respondWithRoute($name)
         {
             return \Illuminate\Routing\Router::respondWithRoute($name);
@@ -9105,7 +9105,7 @@ namespace Illuminate\Support\Facades {
          * @param mixed $response
          * @return \Illuminate\Http\Response|\Illuminate\Http\JsonResponse
          * @static
-         */
+         */ 
         public static function toResponse($request, $response)
         {
             return \Illuminate\Routing\Router::toResponse($request, $response);
@@ -9409,8 +9409,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $patterns
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function is($patterns = null)
         {
             return \Illuminate\Routing\Router::is($patterns);
@@ -9421,8 +9421,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $patterns
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function currentRouteNamed($patterns = null)
         {
             return \Illuminate\Routing\Router::currentRouteNamed($patterns);
@@ -9444,8 +9444,8 @@ namespace Illuminate\Support\Facades {
          *
          * @param array $patterns
          * @return bool 
-         * @static 
-         */
+         * @static
+         */ 
         public static function uses($patterns = null)
         {
             return \Illuminate\Routing\Router::uses($patterns);
@@ -9552,7 +9552,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Routing\Router::mixin($mixin);
@@ -9592,8 +9592,8 @@ namespace Illuminate\Support\Facades {
          * Drop all tables from the database.
          *
          * @return void 
-         * @static 
-         */
+         * @static
+         */ 
         public static function dropAllTables()
         {
             \Illuminate\Database\Schema\SQLiteBuilder::dropAllTables();
@@ -9603,8 +9603,8 @@ namespace Illuminate\Support\Facades {
          * Delete the database file & re-create it.
          *
          * @return void 
-         * @static 
-         */
+         * @static
+         */ 
         public static function refreshDatabaseFile()
         {
             \Illuminate\Database\Schema\SQLiteBuilder::refreshDatabaseFile();
@@ -9629,7 +9629,7 @@ namespace Illuminate\Support\Facades {
          * @param string $table
          * @return bool
          * @static
-         */
+         */ 
         public static function hasTable($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder            
@@ -9684,7 +9684,7 @@ namespace Illuminate\Support\Facades {
          * @param string $table
          * @return array
          * @static
-         */
+         */ 
         public static function getColumnListing($table)
         {
             //Method inherited from \Illuminate\Database\Schema\Builder            
@@ -10100,8 +10100,8 @@ namespace Illuminate\Support\Facades {
          * @param string $key
          * @param mixed $value
          * @return void 
-         * @static 
-         */
+         * @static
+         */ 
         public static function flash($key, $value = true)
         {
             \Illuminate\Session\Store::flash($key, $value);
@@ -10786,7 +10786,7 @@ namespace Illuminate\Support\Facades {
          * @param array $options
          * @return string
          * @static
-         */
+         */ 
         public static function getAwsTemporaryUrl($adapter, $path, $expiration, $options)
         {
             return \Illuminate\Filesystem\FilesystemAdapter::getAwsTemporaryUrl($adapter, $path, $expiration, $options);
@@ -10801,7 +10801,7 @@ namespace Illuminate\Support\Facades {
          * @param $options
          * @return string
          * @static
-         */
+         */ 
         public static function getRackspaceTemporaryUrl($adapter, $path, $expiration, $options)
         {
             return \Illuminate\Filesystem\FilesystemAdapter::getRackspaceTemporaryUrl($adapter, $path, $expiration, $options);
@@ -11237,7 +11237,7 @@ namespace Illuminate\Support\Facades {
          * @param object $mixin
          * @return void
          * @static
-         */
+         */ 
         public static function mixin($mixin)
         {
             \Illuminate\Routing\UrlGenerator::mixin($mixin);
@@ -11431,7 +11431,7 @@ namespace Illuminate\Support\Facades {
          * @param array $mergeData
          * @return \Illuminate\Contracts\View\View
          * @static
-         */
+         */ 
         public static function first($views, $data = array(), $mergeData = array())
         {
             return \Illuminate\View\Factory::first($views, $data, $mergeData);
@@ -11806,7 +11806,7 @@ namespace Illuminate\Support\Facades {
          * @param \Closure|string $callback
          * @return array
          * @static
-         */
+         */ 
         public static function creator($views, $callback)
         {
             return \Illuminate\View\Factory::creator($views, $callback);
@@ -11831,7 +11831,7 @@ namespace Illuminate\Support\Facades {
          * @param \Closure|string $callback
          * @return array
          * @static
-         */
+         */ 
         public static function composer($views, $callback)
         {
             return \Illuminate\View\Factory::composer($views, $callback);
@@ -12156,12 +12156,12 @@ namespace Barryvdh\Debugbar {
 
     class Facade
     {
-
+        
         /**
          * Enable the Debugbar and boot, if not already booted.
          *
          * @static
-         */
+         */ 
         public static function enable()
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::enable();
@@ -12171,17 +12171,17 @@ namespace Barryvdh\Debugbar {
          * Boot the debugbar (add collectors, renderer and listener)
          *
          * @static
-         */
+         */ 
         public static function boot()
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::boot();
         }
 
         /**
-         *
+         * 
          *
          * @static
-         */
+         */ 
         public static function shouldCollect($name, $default = false)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::shouldCollect($name, $default);
@@ -12194,7 +12194,7 @@ namespace Barryvdh\Debugbar {
          * @throws DebugBarException
          * @return $this
          * @static
-         */
+         */ 
         public static function addCollector($collector)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::addCollector($collector);
@@ -12210,7 +12210,7 @@ namespace Barryvdh\Debugbar {
          * @param array $context
          * @throws \ErrorException
          * @static
-         */
+         */ 
         public static function handleError($level, $message, $file = '', $line = 0, $context = array())
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::handleError($level, $message, $file, $line, $context);
@@ -12222,7 +12222,7 @@ namespace Barryvdh\Debugbar {
          * @param string $name Internal name, used to stop the measure
          * @param string $label Public name
          * @static
-         */
+         */ 
         public static function startMeasure($name, $label = null)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::startMeasure($name, $label);
@@ -12233,7 +12233,7 @@ namespace Barryvdh\Debugbar {
          *
          * @param string $name
          * @static
-         */
+         */ 
         public static function stopMeasure($name)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::stopMeasure($name);
@@ -12245,7 +12245,7 @@ namespace Barryvdh\Debugbar {
          * @param \Exception $e
          * @deprecated in favor of addThrowable
          * @static
-         */
+         */ 
         public static function addException($e)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::addException($e);
@@ -12256,7 +12256,7 @@ namespace Barryvdh\Debugbar {
          *
          * @param \Exception $e
          * @static
-         */
+         */ 
         public static function addThrowable($e)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::addThrowable($e);
@@ -12269,7 +12269,7 @@ namespace Barryvdh\Debugbar {
          * @param string $basePathng
          * @return \Barryvdh\Debugbar\JavascriptRenderer
          * @static
-         */
+         */ 
         public static function getJavascriptRenderer($baseUrl = null, $basePath = null)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::getJavascriptRenderer($baseUrl, $basePath);
@@ -12282,7 +12282,7 @@ namespace Barryvdh\Debugbar {
          * @param \Symfony\Component\HttpFoundation\Response $response
          * @return \Symfony\Component\HttpFoundation\Response
          * @static
-         */
+         */ 
         public static function modifyResponse($request, $response)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::modifyResponse($request, $response);
@@ -12293,7 +12293,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return boolean
          * @static
-         */
+         */ 
         public static function isEnabled()
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::isEnabled();
@@ -12304,7 +12304,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return array
          * @static
-         */
+         */ 
         public static function collect()
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::collect();
@@ -12316,7 +12316,7 @@ namespace Barryvdh\Debugbar {
          * @param \Symfony\Component\HttpFoundation\Response $response A Response instance
          * Based on https://github.com/symfony/WebProfilerBundle/blob/master/EventListener/WebDebugToolbarListener.php
          * @static
-         */
+         */ 
         public static function injectDebugbar($response)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::injectDebugbar($response);
@@ -12326,7 +12326,7 @@ namespace Barryvdh\Debugbar {
          * Disable the Debugbar
          *
          * @static
-         */
+         */ 
         public static function disable()
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::disable();
@@ -12339,7 +12339,7 @@ namespace Barryvdh\Debugbar {
          * @param float $start
          * @param float $end
          * @static
-         */
+         */ 
         public static function addMeasure($label, $start, $end)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::addMeasure($label, $start, $end);
@@ -12351,7 +12351,7 @@ namespace Barryvdh\Debugbar {
          * @param string $label
          * @param \Closure $closure
          * @static
-         */
+         */ 
         public static function measure($label, $closure)
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::measure($label, $closure);
@@ -12362,7 +12362,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return array
          * @static
-         */
+         */ 
         public static function collectConsole()
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::collectConsole();
@@ -12370,13 +12370,13 @@ namespace Barryvdh\Debugbar {
 
         /**
          * Adds a message to the MessagesCollector
-         *
+         * 
          * A message can be anything from an object to a string
          *
          * @param mixed $message
          * @param string $label
          * @static
-         */
+         */ 
         public static function addMessage($message, $label = 'info')
         {
             return \Barryvdh\Debugbar\LaravelDebugbar::addMessage($message, $label);
@@ -12388,7 +12388,7 @@ namespace Barryvdh\Debugbar {
          * @param string $name
          * @return boolean
          * @static
-         */
+         */ 
         public static function hasCollector($name)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12399,10 +12399,10 @@ namespace Barryvdh\Debugbar {
          * Returns a data collector
          *
          * @param string $name
-         * @return \DebugBar\DataCollectorInterface
+         * @return \DebugBar\DataCollectorInterface 
          * @throws DebugBarException
          * @static
-         */
+         */ 
         public static function getCollector($name)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12414,7 +12414,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return \DebugBar\array[DataCollectorInterface]
          * @static
-         */
+         */ 
         public static function getCollectors()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12427,7 +12427,7 @@ namespace Barryvdh\Debugbar {
          * @param \DebugBar\RequestIdGeneratorInterface $generator
          * @return $this
          * @static
-         */
+         */ 
         public static function setRequestIdGenerator($generator)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12435,11 +12435,11 @@ namespace Barryvdh\Debugbar {
         }
 
         /**
-         *
+         * 
          *
          * @return \DebugBar\RequestIdGeneratorInterface
          * @static
-         */
+         */ 
         public static function getRequestIdGenerator()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12451,7 +12451,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return string
          * @static
-         */
+         */ 
         public static function getCurrentRequestId()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12464,7 +12464,7 @@ namespace Barryvdh\Debugbar {
          * @param \DebugBar\StorageInterface $storage
          * @return $this
          * @static
-         */
+         */ 
         public static function setStorage($storage = null)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12472,11 +12472,11 @@ namespace Barryvdh\Debugbar {
         }
 
         /**
-         *
+         * 
          *
          * @return \DebugBar\StorageInterface
          * @static
-         */
+         */ 
         public static function getStorage()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12488,7 +12488,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return boolean
          * @static
-         */
+         */ 
         public static function isDataPersisted()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12501,7 +12501,7 @@ namespace Barryvdh\Debugbar {
          * @param \DebugBar\HttpDriverInterface $driver
          * @return $this
          * @static
-         */
+         */ 
         public static function setHttpDriver($driver)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12510,12 +12510,12 @@ namespace Barryvdh\Debugbar {
 
         /**
          * Returns the HTTP driver
-         *
+         * 
          * If no http driver where defined, a PhpHttpDriver is automatically created
          *
          * @return \DebugBar\HttpDriverInterface
          * @static
-         */
+         */ 
         public static function getHttpDriver()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12524,12 +12524,12 @@ namespace Barryvdh\Debugbar {
 
         /**
          * Returns collected data
-         *
+         * 
          * Will collect the data if none have been collected yet
          *
          * @return array
          * @static
-         */
+         */ 
         public static function getData()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12543,7 +12543,7 @@ namespace Barryvdh\Debugbar {
          * @param integer $maxHeaderLength
          * @return array
          * @static
-         */
+         */ 
         public static function getDataAsHeaders($headerName = 'phpdebugbar', $maxHeaderLength = 4096, $maxTotalHeaderLength = 250000)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12558,7 +12558,7 @@ namespace Barryvdh\Debugbar {
          * @param integer $maxHeaderLength
          * @return $this
          * @static
-         */
+         */ 
         public static function sendDataInHeaders($useOpenHandler = null, $headerName = 'phpdebugbar', $maxHeaderLength = 4096)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12569,7 +12569,7 @@ namespace Barryvdh\Debugbar {
          * Stacks the data in the session for later rendering
          *
          * @static
-         */
+         */ 
         public static function stackData()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12581,7 +12581,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return boolean
          * @static
-         */
+         */ 
         public static function hasStackedData()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12594,7 +12594,7 @@ namespace Barryvdh\Debugbar {
          * @param boolean $delete Whether to delete the data in the session
          * @return array
          * @static
-         */
+         */ 
         public static function getStackedData($delete = true)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12607,7 +12607,7 @@ namespace Barryvdh\Debugbar {
          * @param string $ns
          * @return $this
          * @static
-         */
+         */ 
         public static function setStackDataSessionNamespace($ns)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12619,7 +12619,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return string
          * @static
-         */
+         */ 
         public static function getStackDataSessionNamespace()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12633,7 +12633,7 @@ namespace Barryvdh\Debugbar {
          * @param boolean $enabled
          * @return $this
          * @static
-         */
+         */ 
         public static function setStackAlwaysUseSessionStorage($enabled = true)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12646,7 +12646,7 @@ namespace Barryvdh\Debugbar {
          *
          * @return boolean
          * @static
-         */
+         */ 
         public static function isStackAlwaysUseSessionStorage()
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12654,10 +12654,10 @@ namespace Barryvdh\Debugbar {
         }
 
         /**
-         *
+         * 
          *
          * @static
-         */
+         */ 
         public static function offsetSet($key, $value)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12665,10 +12665,10 @@ namespace Barryvdh\Debugbar {
         }
 
         /**
-         *
+         * 
          *
          * @static
-         */
+         */ 
         public static function offsetGet($key)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12676,10 +12676,10 @@ namespace Barryvdh\Debugbar {
         }
 
         /**
-         *
+         * 
          *
          * @static
-         */
+         */ 
         public static function offsetExists($key)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -12687,10 +12687,10 @@ namespace Barryvdh\Debugbar {
         }
 
         /**
-         *
+         * 
          *
          * @static
-         */
+         */ 
         public static function offsetUnset($key)
         {
             //Method inherited from \DebugBar\DebugBar            
@@ -14707,10 +14707,10 @@ namespace  {
              *
              * @param array $properties
              * @return static 
-             * @static 
+             * @static
              */
         public static function cloneWithout($properties)
-            {
+        {
                 return \Illuminate\Database\Query\Builder::cloneWithout($properties);
             }
          

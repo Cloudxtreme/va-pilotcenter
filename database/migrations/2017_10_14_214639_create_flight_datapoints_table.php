@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFlightsTable extends Migration
+class CreateFlightDatapointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateFlightsTable extends Migration
      */
     public function up()
     {
-        Schema::create('flights', function (Blueprint $table) {
+        Schema::create('flight_datapoints', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
 
-            // Add new columns for foreign key constraints
-            $table->integer("arrival_airport_id")->unsigned();
-            $table->integer("departure_airport_id")->unsigned();
+            $table->dateTime("recorded_at");
+            $table->float("latitude");
+            $table->float("longitude");
         });
     }
 
@@ -30,6 +30,6 @@ class CreateFlightsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('flights');
+        Schema::dropIfExists('flight_datapoints');
     }
 }
