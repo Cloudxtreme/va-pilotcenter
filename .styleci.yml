@@ -2,6 +2,10 @@ preset: laravel
 
 disabled:
   - simplified_null_return
+  - length_ordered_imports
+
+enabled:
+  - alpha_ordered_imports
 
 finder:
   exclude:
