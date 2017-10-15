@@ -1,20 +1,21 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit;
 
 use App\Airport;
 use App\Flight;
+use App\FlightDatapoint;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\BaseTest;
 
-class FlightTest extends BaseTest
+class FlightDatapointTest extends BaseTest
 {
     use RefreshDatabase;
 
     /**
      * @test
      */
-    public function flightHasArrivalAndDepartureAirport()
+    public function datapointBelongsToFlight()
     {
         $flight = factory(Flight::class)->make();
         $airports = factory(Airport::class, 2)->create();
@@ -22,9 +23,10 @@ class FlightTest extends BaseTest
         $flight->departureAirport()->associate($airports[0]);
         $flight->arrivalAirport()->associate($airports[1]);
 
-        $departure = $flight->departureAirport;
-        $arrival = $flight->arrivalAirport;
-        $this->assertEquals($departure->getAttributes(), $airports[0]->getAttributes());
-        $this->assertEquals($arrival->getAttributes(), $airports[1]->getAttributes());
+        $datapoint = factory(FlightDatapoint::class)->create();
+        $datapoint->flight()->associate($flight);
+
+        $associatedFlight = $datapoint->flight;
+        $this->assertEquals($associatedFlight->getAttributes(), $flight->getAttributes());
     }
 }
