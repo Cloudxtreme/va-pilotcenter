@@ -20,4 +20,9 @@ class Flight extends Model
     {
         return $this->belongsTo('App\Airport');
     }
+
+    public function datapoints()
+    {
+        return $this->hasMany('App\FlightDatapoint');
+    }
 }
