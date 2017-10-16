@@ -17,8 +17,7 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "php-coveralls/php-coveralls": "^1.0",
-        "phpunit/phpunit": "~6.0",
-        "orchestra/testbench": "~3.0"
+        "phpunit/phpunit": "~6.0"
     },
     "autoload": {
         "classmap": [

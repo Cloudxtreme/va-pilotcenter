@@ -14,8 +14,8 @@ class AddFlightStartAndEnd extends Migration
     public function up()
     {
         Schema::table("flights", function (Blueprint $table) {
-            $table->dateTime("started_at")->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->dateTime("ended_at")->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime("started_at")->nullable();
+            $table->dateTime("ended_at")->nullable();
         });
     }
 
