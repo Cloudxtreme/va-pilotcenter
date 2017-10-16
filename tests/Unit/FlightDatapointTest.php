@@ -5,13 +5,10 @@ namespace Tests\Unit;
 use App\Airport;
 use App\Flight;
 use App\FlightDatapoint;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\BaseTest;
+use Tests\TestCase;
 
-class FlightDatapointTest extends BaseTest
+class FlightDatapointTest extends TestCase
 {
-    use RefreshDatabase;
-
     /**
      * @test
      */

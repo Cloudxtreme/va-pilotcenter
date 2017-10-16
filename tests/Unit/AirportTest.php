@@ -4,13 +4,10 @@ namespace Tests\Unit;
 
 use App\Airport;
 use App\Runway;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\BaseTest;
+use Tests\TestCase;
 
-class AirportTest extends BaseTest
+class AirportTest extends TestCase
 {
-    use RefreshDatabase;
-
     /**
      * @test
      */

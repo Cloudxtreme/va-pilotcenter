@@ -3,9 +3,9 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\TestCase;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
-abstract class BaseTest extends TestCase
+abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication, RefreshDatabase;
 }
