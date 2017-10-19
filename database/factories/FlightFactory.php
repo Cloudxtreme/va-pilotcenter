@@ -4,6 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Flight::class, function (Faker $faker) {
     return [
-        // This can be empty.
+        'started_at' => $faker->dateTime()->format("Y-m-d H:i:s"),
+        'ended_at' => $faker->dateTime()->format("Y-m-d H:i:s")
     ];
 });

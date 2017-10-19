@@ -46,14 +46,19 @@ class FlightTest extends TestCase
      */
     public function flightHasDatapoints()
     {
-        $flight = factory(Flight::class)->make();
+        $airports = factory(Airport::class, 2)->create();
+
+        $flight = factory(Flight::class)->create([
+            'arrival_airport_id' => $airports[0]->id,
+            'departure_airport_id' => $airports[1]->id
+        ]);
+
         $datapoints = factory(FlightDatapoint::class, 10)->create()->each(function ($point) use ($flight) {
-            $point->flight()->associate($flight);
+            $flight->datapoints()->save($point);
         });
 
-        foreach ($datapoints as $point) {
-            $associatedFlight = $point->flight;
-            $this->assertEquals($associatedFlight->getAttributes(), $flight->getAttributes());
+        foreach ($flight->datapoints as $i => $datapoint) {
+            $this->assertEquals($datapoints[$i]->getAttributes(), $datapoint->getAttributes());
         }
     }
 }
