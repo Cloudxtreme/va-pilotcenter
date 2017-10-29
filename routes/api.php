@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*
+ * The auth route is outside of the middleware block, since it generates the token that is needed when accessing routes
+ * that are protected with the "jwt" middleware.
+ */
+Route::get("/auth", "Auth\LoginController@authenticateApiUser");
+
+/*
+ * The API routes are protected via JWT authentication
+ */
+Route::middleware(['api', 'jwt'])->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //factory
+        factory(\App\User::class)->create([
+            'password' => password_hash("test1234", PASSWORD_BCRYPT)
+        ]);
     }
 }

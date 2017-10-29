@@ -17,8 +17,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Web Routes
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::middleware([])->group(function () {
-    Route::resource('flights', "ApiControllers\FlightController");
-});
