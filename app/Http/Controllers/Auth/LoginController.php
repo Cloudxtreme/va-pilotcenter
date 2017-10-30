@@ -47,7 +47,7 @@ class LoginController extends Controller
 
         try {
             // attempt to verify the credentials and create a token for the user
-            if (!$token = JWTAuth::attempt($credentials)) {
+            if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {

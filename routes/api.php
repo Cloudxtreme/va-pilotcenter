@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
  * The auth route is outside of the middleware block, since it generates the token that is needed when accessing routes
  * that are protected with the "jwt" middleware.
  */
-Route::get("/auth", "Auth\LoginController@authenticateApiUser");
+Route::get('/auth', "Auth\LoginController@authenticateApiUser");
 
 /*
  * The API routes are protected via JWT authentication
