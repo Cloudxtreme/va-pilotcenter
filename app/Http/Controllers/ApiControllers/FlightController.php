@@ -4,10 +4,11 @@ namespace App\Http\Controllers\ApiControllers;
 
 use App\Flight;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Auth;
 
 class FlightController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +16,11 @@ class FlightController extends Controller
      */
     public function index()
     {
-        return response()->json(Flight::all());
+        $flights = Auth::user()
+            ->flights()
+            ->with(['departureAirport', 'arrivalAirport'])
+            ->get();
+        return response()->json($flights);
     }
 
     /**
@@ -23,10 +28,10 @@ class FlightController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /*public function create()
     {
         //
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.
@@ -34,10 +39,10 @@ class FlightController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    /*public function store(Request $request)
     {
         //
-    }
+    }*/
 
     /**
      * Display the specified resource.
@@ -45,10 +50,10 @@ class FlightController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    /*public function show($id)
     {
         //
-    }
+    }*/
 
     /**
      * Show the form for editing the specified resource.
@@ -56,10 +61,10 @@ class FlightController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)
     {
         //
-    }
+    }*/
 
     /**
      * Update the specified resource in storage.
@@ -68,10 +73,10 @@ class FlightController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    /*public function update(Request $request, $id)
     {
         //
-    }
+    }*/
 
     /**
      * Remove the specified resource from storage.
@@ -81,6 +86,12 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $flight = Flight::find($id);
+        if (!\Gate::allows("delete-flight", $flight)) {
+            abort(403);
+        }
+
+        $flight->delete();
+        return response()->json($flight);
     }
 }
